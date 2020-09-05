@@ -1,7 +1,6 @@
 ﻿#include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <VLCQtCore/Common.h>
-#include <VLCQtQml/QmlVideoPlayer.h>
+
 
 #include "maincontroller.h"
 int main(int argc, char *argv[])
@@ -10,9 +9,6 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
 
     QGuiApplication app(argc, argv);
-    VlcCommon::setPluginPath(app.applicationDirPath() + "/plugins");
-    VlcQmlVideoPlayer::registerPlugin();
-
     qmlRegisterType<VideoModel>("VideoModel",1,0,"VideoModel");
 
     QQmlApplicationEngine engine;

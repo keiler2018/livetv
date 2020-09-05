@@ -66,17 +66,18 @@ void VideoModel::getAllImg()
             QtConcurrent::run([=](){
                 QString param = QString("ffmpeg.exe -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
                 QProcess::execute(param);
+                //QProcess process;
+                //QProcess::startDetached(param);
 
                 });
-            delay(100);
             QFile file(iconPath);
             if(file.exists()){
                 m_nameImgMap[name]=iconPath;
                 qDebug()<<"getAllImg "<<iconPath;
-                emit imgUpdate();
             }
         }
     }
+    emit imgUpdate();
 }
 
 void VideoModel::getAllName()
@@ -134,6 +135,15 @@ QString VideoModel::getImgByName(QString name)
     return m_nameImgMap.value(name);
 }
 
+void VideoModel::playUrl(QString url)
+{
+    QtConcurrent::run([=](){
+        QString param = QString("ffplay.exe -i %1 -fs").arg(url);
+        QProcess::execute(param);
+
+        });
+}
+
 void VideoModel::insert(int index, const VideoData &data)
 {
     if(index < 0 || index > dataList_.count()) {
@@ -181,4 +191,3 @@ QHash<int, QByteArray> VideoModel::roleNames() const
     roles[IconPathRole] = "dmIconPath";
     return roles;
 }
-

@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>HomePage.qml</file>
-        <file>TVPage.qml</file>
         <file>images/bk.png</file>
         <file>images/loading.gif</file>
         <file>images/default.jpg</file>

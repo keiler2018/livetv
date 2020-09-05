@@ -39,6 +39,8 @@ public:
     Q_INVOKABLE void clear();
     Q_INVOKABLE QString getImgByName(QString name);
 
+    Q_INVOKABLE void playUrl(QString url);
+
     // Basic functionality:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;

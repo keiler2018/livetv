@@ -27,10 +27,6 @@ QML_IMPORT_PATH =
 QML_DESIGNER_IMPORT_PATH =
 
 
-LIBS       += -L$$PWD\third_party\vlc-qt\lib  -lVLCQtCore -lVLCQtQml
-INCLUDEPATH += $$PWD\third_party\vlc-qt\include
-
-
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

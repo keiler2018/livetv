@@ -4,7 +4,6 @@ import VideoModel 1.0
 Rectangle{
     id:root
     color: "#000000"
-    signal tvClick(string url)
 
     function close(){
         timer.stop()
@@ -94,7 +93,7 @@ Rectangle{
                  console.log("key...",event.key)
                 switch(event.key){
                 case 16777220:
-                    tvClick(dmVideoUrl)
+                    videoModel.playUrl(dmVideoUrl)
                     break
                 default:
                     return
@@ -107,7 +106,7 @@ Rectangle{
                     gridView.currentIndex = index
                 }
                 onDoubleClicked: {
-                    tvClick(dmVideoUrl)
+                    videoModel.playUrl(dmVideoUrl)
                 }
             }
         }
