@@ -4,9 +4,9 @@ import QtQuick.Window 2.2
 Window {
     id:root
     visible: true
-    width: 640
-    height: 480
-    //visibility: Window.FullScreen
+    ///width: 640
+    //height: 480
+    visibility: Window.FullScreen
     title: qsTr("LiveTV")
 
     onClosing:{
