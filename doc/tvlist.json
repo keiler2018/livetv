@@ -1,0 +1,174 @@
+{
+	"list": [{
+			"name": "CCTV1",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
+		},
+		{
+			"name": "CCTV2",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv2.m3u8"
+		},
+		{
+			"name": "CCTV3",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv3.m3u8"
+		},
+		{
+			"name": "CCTV4",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv4.m3u8"
+		},
+		{
+			"name": "CCTV5",
+			"url": "http://cctv5ksh5ca.v.kcdnvip.com/live/cctv5_2/index.m3u8"
+		},
+		{
+			"name":"CCTV6",
+			"url":"http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"
+		},
+		{
+			"name": "CCTV7",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv7.m3u8"
+		},
+		{
+			"name": "CCTV8",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv8.m3u8"
+		},
+		{
+			"name": "CCTV9",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv9.m3u8"
+		},
+		{
+			"name": "CCTV10",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv10.m3u8"
+		},
+		{
+			"name": "CCTV11",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv11.m3u8"
+		},
+		{
+			"name": "CCTV12",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv12.m3u8"
+		},
+		{
+			"name": "CCTV13",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv13.m3u8"
+		},
+		{
+			"name": "CCTV14",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv14.m3u8"
+		},
+		{
+			"name": "CCTV15",
+			"url": "http://ivi.bupt.edu.cn/hls/cctv15.m3u8"
+		},
+		{
+			"name": "湖南卫视",
+			"url": "http://ivi.bupt.edu.cn/hls/hunanhd.m3u8"
+		}
+		,
+		{
+			"name": "安徽卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/anhui_2_hd/index.m3u8"
+		}
+		,
+		{
+			"name": "东方卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/dongfang_2_hd/index.m3u8"
+		}
+		,
+		{
+			"name": "江苏卫视",
+			"url": "http://mgzb.live.miguvideo.com:8088/envivo_x/2018/SD/jiangsuTV/350/index.m3u8?msisdn=migu&mdspid=&spid=699067&netType=0&sid=5500199481&pid=2028597139&timestamp=20200905170351&Channel_ID=0116_25000000-99000-100300010010001&ProgramID=623899540&ParentNodeID=-99&assertID=5500199481&client_ip=125.34.14.115&SecurityKey=20200905170351&mvid=&mcid=&mpid=&playurlVersion=SJ-A1-0.0.3&userid=&jmhm=&videocodec=h264&encrypt=dbdf3a2df384955fbb5e9a009334da0c"
+		}
+		,
+		{
+			"name": "浙江卫视",
+			"url": "http://hw-m-l.cztv.com/channels/lantian/channel01/360p.m3u8"
+		}
+		,
+		{
+			"name": "辽宁卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/liaoning_2_hd/index.m3u8"
+		}
+		,
+		{
+			"name": "广西卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/guangxi_2_hd/index.m3u8"
+		}
+		,
+		{
+			"name": "北京卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/btv1_2_hd/index.m3u8"
+		}
+		,
+		{
+			"name": "广东卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/guangdong_2_hd/index.m3u8"
+		}
+		,
+		{
+			"name": "江西卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/jiangxi_2_hd/index.m3u8"
+		}
+		,
+		{
+			"name": "四川卫视",
+			"url": "http://mgzb.live.miguvideo.com:8088/envivo_v/2018/SD/sichuanTV/350/index.m3u8?msisdn=migu&mdspid=&spid=800033&netType=0&sid=5500321161&pid=2028597139&timestamp=20200905174519&Channel_ID=0116_25000000-99000-100300010010001&ProgramID=630288361&ParentNodeID=-99&assertID=5500321161&client_ip=125.34.14.115&SecurityKey=20200905174519&mvid=&mcid=&mpid=&playurlVersion=SJ-A1-0.0.3&userid=&jmhm=&videocodec=h264&encrypt=70f358eefb8d868ad7a8d9653c0c3538"
+		}
+		,
+		{
+			"name": "山东卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/shandong_2_hd/index.m3u8"
+		}
+		
+,
+		{
+			"name": "天津卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/tianjin_2_hd/index.m3u8"
+		}
+		,
+		{
+			"name": "深圳卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/shenzhen_2_hd/index.m3u8"
+		}
+		,
+		{
+			"name": "云南卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/yunnan_2_hd.m3u8"
+		}
+		,
+		{
+			"name": "河南卫视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/henan_2_hd.m3u8"
+		}	
+		,
+		{
+			"name": "香港卫视",
+			"url": "http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8"
+		}
+		,
+		{
+			"name": "北京影视",
+			"url": "http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/btv4_2_hd.m3u8"
+		}
+		,
+		{
+			"name": "浙江影视",
+			"url": "http://hw-m-l.cztv.com/channels/lantian/channel05/360p.m3u8"
+		}
+		,
+		{
+			"name": "东方影视",
+			"url": "http://mgzb.live.miguvideo.com:8088/wd_r4/dfl/dianshijusd/350/index.m3u8?msisdn=migu&mdspid=&spid=699001&netType=0&sid=5500013485&pid=2028597139&timestamp=20200905175356&Channel_ID=0116_25000000-99000-100300010010001&ProgramID=618954718&ParentNodeID=-99&assertID=5500013485&client_ip=125.34.14.115&SecurityKey=20200905175356&mvid=&mcid=&mpid=&playurlVersion=SJ-A1-0.0.3&userid=&jmhm=&videocodec=h264&encrypt=7a4fbf62b17921bb018f548069f1210a"
+		}
+		,
+		{
+			"name": "江西影视",
+			"url": "http://live.jxtvcn.com.cn/live-jxtv/tv_jxtv4.m3u8?token=3475ad84bd174a0bc7da2b31f4bcb90c&t=1599299662"
+		}
+		,
+		{
+			"name": "安徽影视",
+			"url": "http://zbbf2.ahtv.cn/live/756.m3u8"
+		}
+				
+	]
+}
