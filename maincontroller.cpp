@@ -42,6 +42,7 @@ VideoModel::VideoModel(QObject *)
 
     connect(socket, SIGNAL(readyRead()),
             this, SLOT(readPendingDatagrams()));
+
 }
 
 VideoModel::~VideoModel()
@@ -63,20 +64,20 @@ void VideoModel::getAllImg()
         QString name = map.keys().at(i);
 
         if (m_tempDir.isValid()) {
+            qDebug()<<"getAllImage...................";
             QString iconPath = m_tempDir.path()+"/"+name+".png";
             QString url = map.values().at(i);
             QtConcurrent::run([=](){
                 QString param;
-#if defined(Q_OS_WIN32)
+#if defined(Q_OS_WIN32)z
 
-                param = QString("ffmpeg.exe -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
+                param = QString("ffmpeg.exe -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y -t 2").arg(url).arg(iconPath);
 
 #elif defined(Q_OS_LINUX)
 
                 param = QString("ffmpeg -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
 
 #endif
-
                 QProcess::execute(param);
             });
             QFile file(iconPath);
@@ -147,21 +148,19 @@ QString VideoModel::getImgByName(QString name)
 void VideoModel::playUrl(QString url)
 {
     qDebug()<<"playUrl..............."<<url;
-    QtConcurrent::run([=](){
-        QString param;
+    QString param;
 #if defined(Q_OS_WIN32)
 
-        param = QString("ffplay.exe -i %1 -fs").arg(url);
+    param = QString("ffplay.exe -i %1 -fs").arg(url);
 
 #elif defined(Q_OS_LINUX)
 
-        param = QString("ffplay -i %1 -fs").arg(url);
+    param = QString("ffplay -i %1 -fs").arg(url);
 #endif
 
-        qDebug()<<"playUrl............ "<<param;
-        QProcess::execute(param);
+    qDebug()<<"ffplay  param............ "<<param;
+    QProcess::startDetached(param);
 
-    });
 }
 
 void VideoModel::insert(int index, const VideoData &data)

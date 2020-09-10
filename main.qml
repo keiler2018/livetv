@@ -12,6 +12,7 @@ Window {
     onClosing:{
         console.log("closing........")
         homePage.close()
+        close.accepted=true
     }
 
     HomePage{

@@ -4,6 +4,7 @@
 #include <QAbstractListModel>
 #include <QTemporaryDir>
 #include <QUdpSocket>
+#include <QProcess>
 
 class VideoData
 {

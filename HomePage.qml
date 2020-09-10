@@ -16,12 +16,14 @@ Rectangle{
 
     Timer {
         id:timer
-        interval: 5000  //毫秒
+        interval: 3000  //毫秒
         running: true
         repeat: true
         triggeredOnStart:true
         onTriggered: {
+            console.log("timer triggered...........")
             videoModel.getAllImg()
+
         }
     }
 

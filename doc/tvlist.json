@@ -5,15 +5,15 @@
 		},
 		{
 			"name": "CCTV2",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv2.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv2hd.m3u8"
 		},
 		{
 			"name": "CCTV3",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv3.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8"
 		},
 		{
 			"name": "CCTV4",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv4.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv4hd.m3u8"
 		},
 		{
 			"name": "CCTV5",
@@ -25,19 +25,19 @@
 		},
 		{
 			"name": "CCTV7",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv7.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv7hd.m3u8"
 		},
 		{
 			"name": "CCTV8",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv8.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv8hd.m3u8"
 		},
 		{
 			"name": "CCTV9",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv9.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv9hd.m3u8"
 		},
 		{
 			"name": "CCTV10",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv10.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv10hd.m3u8"
 		},
 		{
 			"name": "CCTV11",
@@ -45,19 +45,19 @@
 		},
 		{
 			"name": "CCTV12",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv12.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv12hd.m3u8"
 		},
 		{
 			"name": "CCTV13",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv13.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv13hd.m3u8"
 		},
 		{
 			"name": "CCTV14",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv14.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv14hd.m3u8"
 		},
 		{
 			"name": "CCTV15",
-			"url": "http://ivi.bupt.edu.cn/hls/cctv15.m3u8"
+			"url": "http://ivi.bupt.edu.cn/hls/cctv15hd.m3u8"
 		},
 		{
 			"name": "湖南卫视",
