@@ -7,7 +7,7 @@
 #include <QUrl>
 #include <QProcess>
 #include <QtConcurrent>
-#include <QNetworkDatagram>
+//#include <QNetworkDatagram>
 
 #include "setting.h"
 VideoData::VideoData(const QString &videoName,const QString &videoUrl, const QString &iconPath)
@@ -69,7 +69,7 @@ void VideoModel::getAllImg()
             QString url = map.values().at(i);
             QtConcurrent::run([=](){
                 QString param;
-#if defined(Q_OS_WIN32)z
+#if defined(Q_OS_WIN32)
 
                 param = QString("ffmpeg.exe -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y -t 2").arg(url).arg(iconPath);
 
@@ -214,7 +214,8 @@ QHash<int, QByteArray> VideoModel::roleNames() const
 void VideoModel::readPendingDatagrams()
 {
     while (socket->hasPendingDatagrams()) {
-        QNetworkDatagram datagram = socket->receiveDatagram();
-        qDebug()<<"read Udp data........"<<datagram.data();
+       // QNetworkDatagram datagram =
+        //socket->receiveDatagram();
+        qDebug()<<"read Udp data........";
     }
 }
