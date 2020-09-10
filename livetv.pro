@@ -14,7 +14,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     maincontroller.cpp \
-    maincontroller.cpp \
     setting.cpp \
     third_party/json/jsoncpp.cpp
 

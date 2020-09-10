@@ -1,4 +1,4 @@
-﻿import QtQuick 2.10
+﻿import QtQuick 2.7
 import VideoModel 1.0
 
 Rectangle{
@@ -111,6 +111,10 @@ Rectangle{
             }
         }
     }
+
+
+
+
 
     property int gridSpacing: 20
     GridView {

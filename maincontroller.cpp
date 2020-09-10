@@ -1,8 +1,4 @@
 ﻿#include "maincontroller.h"
-#include <windows.h>
-#include <winbase.h>
-#include <winnls.h>
-#include <dbt.h>
 #include <QDebug>
 #include <QStorageInfo>
 #include <QDir>
@@ -64,11 +60,18 @@ void VideoModel::getAllImg()
             QString iconPath = m_tempDir.path()+"/"+name+".png";
             QString url = map.values().at(i);
             QtConcurrent::run([=](){
-                QString param = QString("ffmpeg.exe -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
-                QProcess::execute(param);
-                //QProcess process;
-                //QProcess::startDetached(param);
+                 QString param;
+#if defined(Q_OS_WIN32)
 
+param = QString("ffmpeg.exe -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
+
+#elif defined(Q_OS_LINUX)
+
+param = QString("ffmpeg -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
+
+#endif
+
+                QProcess::execute(param);
                 });
             QFile file(iconPath);
             if(file.exists()){
@@ -137,8 +140,19 @@ QString VideoModel::getImgByName(QString name)
 
 void VideoModel::playUrl(QString url)
 {
+    qDebug()<<"playUrl..............."<<url;
     QtConcurrent::run([=](){
-        QString param = QString("ffplay.exe -i %1 -fs").arg(url);
+        QString param;
+#if defined(Q_OS_WIN32)
+
+param = QString("ffplay.exe -i %1 -fs").arg(url);
+
+#elif defined(Q_OS_LINUX)
+
+param = QString("ffplay -i %1 -fs").arg(url);
+#endif
+
+    qDebug()<<"playUrl............ "<<param;
         QProcess::execute(param);
 
         });

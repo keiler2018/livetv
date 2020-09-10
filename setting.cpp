@@ -1,9 +1,9 @@
 ﻿#include "setting.h"
 #include <iostream>
 #include <fstream>
-#include <qDebug>
+#include <QtCore/qdebug.h>
 #include <QCoreApplication>
-#include "../../third_party/json/json.h"
+#include "third_party/json/json.h"
 
 using namespace std;
 Setting::Setting(QObject *parent) : QObject(parent)
