@@ -3,6 +3,7 @@
 
 #include <QAbstractListModel>
 #include <QTemporaryDir>
+#include <QUdpSocket>
 
 class VideoData
 {
@@ -53,6 +54,9 @@ public:
 signals:
     void imgUpdate();
 
+private:
+    QUdpSocket *socket;
+
 protected: // interface QAbstractListModel
     virtual QHash<int, QByteArray> roleNames() const;
     QList<VideoData> dataList_;
@@ -60,6 +64,9 @@ protected: // interface QAbstractListModel
 
     //名字与图片路径
     QMap<QString,QString> m_nameImgMap;
+
+public slots:
+    void readPendingDatagrams();
 
 };
 

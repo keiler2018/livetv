@@ -7,6 +7,7 @@
 #include <QUrl>
 #include <QProcess>
 #include <QtConcurrent>
+#include <QNetworkDatagram>
 
 #include "setting.h"
 VideoData::VideoData(const QString &videoName,const QString &videoUrl, const QString &iconPath)
@@ -35,7 +36,12 @@ QString VideoData::iconPath() const
 
 VideoModel::VideoModel(QObject *)
 {
+    socket = new QUdpSocket(this);
+    bool bind = socket->bind(QHostAddress::Any, 8848);
+    qDebug()<<"udp bind..........."<<bind;
 
+    connect(socket, SIGNAL(readyRead()),
+            this, SLOT(readPendingDatagrams()));
 }
 
 VideoModel::~VideoModel()
@@ -60,19 +66,19 @@ void VideoModel::getAllImg()
             QString iconPath = m_tempDir.path()+"/"+name+".png";
             QString url = map.values().at(i);
             QtConcurrent::run([=](){
-                 QString param;
+                QString param;
 #if defined(Q_OS_WIN32)
 
-param = QString("ffmpeg.exe -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
+                param = QString("ffmpeg.exe -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
 
 #elif defined(Q_OS_LINUX)
 
-param = QString("ffmpeg -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
+                param = QString("ffmpeg -i %1 -f image2 -ss 0 -vframes 1 -s 350*350 %2 -y").arg(url).arg(iconPath);
 
 #endif
 
                 QProcess::execute(param);
-                });
+            });
             QFile file(iconPath);
             if(file.exists()){
                 m_nameImgMap[name]=iconPath;
@@ -145,17 +151,17 @@ void VideoModel::playUrl(QString url)
         QString param;
 #if defined(Q_OS_WIN32)
 
-param = QString("ffplay.exe -i %1 -fs").arg(url);
+        param = QString("ffplay.exe -i %1 -fs").arg(url);
 
 #elif defined(Q_OS_LINUX)
 
-param = QString("ffplay -i %1 -fs").arg(url);
+        param = QString("ffplay -i %1 -fs").arg(url);
 #endif
 
-    qDebug()<<"playUrl............ "<<param;
+        qDebug()<<"playUrl............ "<<param;
         QProcess::execute(param);
 
-        });
+    });
 }
 
 void VideoModel::insert(int index, const VideoData &data)
@@ -204,4 +210,12 @@ QHash<int, QByteArray> VideoModel::roleNames() const
     roles[VideoUrlRole] = "dmVideoUrl";
     roles[IconPathRole] = "dmIconPath";
     return roles;
+}
+
+void VideoModel::readPendingDatagrams()
+{
+    while (socket->hasPendingDatagrams()) {
+        QNetworkDatagram datagram = socket->receiveDatagram();
+        qDebug()<<"read Udp data........"<<datagram.data();
+    }
 }
