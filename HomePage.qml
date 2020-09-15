@@ -17,7 +17,7 @@ Rectangle{
     Timer {
         id:timer
         interval: 3000  //毫秒
-        running: true
+        running: false
         repeat: true
         triggeredOnStart:true
         onTriggered: {
@@ -29,16 +29,16 @@ Rectangle{
 
     Component.onCompleted: {
         videoModel.getAllName()
-        timer.start()
+        //timer.start()
     }
 
     onVisibleChanged: {
         if(visible){
             gridView.forceActiveFocus()
 
-            timer.start()
+            //timer.start()
         }else{
-            timer.stop()
+            //timer.stop()
         }
     }
 
@@ -52,43 +52,44 @@ Rectangle{
             radius: 2
             //color: GridView.isCurrentItem?"#157efb":"#53d769"
 
-            Image {
-                id:iconImage
-                anchors.horizontalCenter: parent.horizontalCenter
-                source:"qrc:/images/default.jpg"
-                anchors.fill: parent
-                anchors.margins: 7
-                cache: false
-                fillMode:Image.PreserveAspectFit
-                Connections{
-                    target: videoModel
-                    onImgUpdate:{
-                        var imgUrl = videoModel.getImgByName(dmVideoName)
-                        if(imgUrl.length>0){
-                            iconImage.source=""
-                            iconImage.source= "file:///"+imgUrl
-                        }
-                    }
-                }
-            }
-            Image {
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.margins: 7
-                height: 50
-                source: "qrc:/images/bk.png"
+//            Image {
+//                id:iconImage
+//                anchors.horizontalCenter: parent.horizontalCenter
+//                source:"qrc:/images/default.jpg"
+//                anchors.fill: parent
+//                anchors.margins: 7
+//                cache: false
+//                fillMode:Image.PreserveAspectFit
+//                Connections{
+//                    target: videoModel
+//                    onImgUpdate:{
+//                        var imgUrl = videoModel.getImgByName(dmVideoName)
+//                        if(imgUrl.length>0){
+//                            iconImage.source=""
+//                            iconImage.source= "file:///"+imgUrl
+//                        }
+//                    }
+//                }
+//            }
+//            Image {
+//                anchors.bottom: parent.bottom
+//                anchors.left: parent.left
+//                anchors.right: parent.right
+//                anchors.margins: 7
+//                height: 50
+//                source: "qrc:/images/bk.png"
                 Text {
                     id: videoName
                     text: dmVideoName
-                    anchors.left: parent.left
-                    anchors.leftMargin: 10
-                    font.pointSize: 20
-                    anchors.verticalCenter: parent.verticalCenter
+                    //anchors.left: parent.left
+                    //anchors.leftMargin: 10
+                    font.pointSize: 30
+                   // anchors.verticalCenter: parent.verticalCenter
+                    anchors.centerIn: parent
                     color: "white"
                     wrapMode: Text.WordWrap
                 }
-            }
+           // }
 
              Keys.enabled: true
              Keys.onPressed: {
@@ -118,15 +119,16 @@ Rectangle{
 
 
 
-    property int gridSpacing: 20
+    property int gridSpacing: 30
     GridView {
         id: gridView
         anchors.fill: parent
+        anchors.centerIn: parent
         anchors.margins: 20
         focus: true
 
-        cellWidth: 350
-        cellHeight: 350
+        cellWidth: 200
+        cellHeight: 80
         delegate: videoDelegate
         model: videoModel
 
